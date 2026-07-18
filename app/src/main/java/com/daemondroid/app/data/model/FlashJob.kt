@@ -1,11 +1,13 @@
 package com.daemondroid.app.data.model
 
+import androidx.compose.runtime.Immutable
 import kotlinx.serialization.Serializable
 
 /**
  * Represents a flash / install job — passed between screens as the user
  * builds up their operation configuration.
  */
+@Immutable
 @Serializable
 data class FlashJob(
     val id: String = java.util.UUID.randomUUID().toString(),
@@ -19,6 +21,7 @@ data class FlashJob(
     val checksumType: ChecksumType = ChecksumType.SHA256,
 )
 
+@Immutable
 @Serializable
 data class FlashOptions(
     // Standard flash

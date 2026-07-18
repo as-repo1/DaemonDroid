@@ -1,5 +1,7 @@
 package com.daemondroid.app.ui.windows
 
+import com.daemondroid.app.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -17,6 +19,7 @@ import com.daemondroid.app.ui.components.FlashProgressState
 import com.daemondroid.app.ui.components.ProgressOverlay
 import com.daemondroid.app.ui.components.WarningDialog
 import com.daemondroid.app.ui.flash.StepCard
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import com.daemondroid.app.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -35,9 +38,9 @@ fun WindowsFlashScreen(
         containerColor = DarkBackground,
         topBar = {
             TopAppBar(
-                title = { Text("Windows Installer", color = TextPrimary, fontWeight = FontWeight.SemiBold) },
+                title = { Text(stringResource(R.string.feature_windows), color = TextPrimary, fontWeight = FontWeight.SemiBold) },
                 navigationIcon = {
-                    IconButton(onClick = onBack) { Icon(Icons.Filled.ArrowBack, "Back", tint = TextSecondary) }
+                    IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = TextSecondary) }
                 },
                 actions = {
                     IconButton(onClick = onViewLog) { Icon(Icons.Filled.Terminal, "Log", tint = TextSecondary) }
@@ -60,7 +63,7 @@ fun WindowsFlashScreen(
                     ) {
                         Icon(Icons.Filled.Window, null, modifier = Modifier.size(18.dp))
                         Spacer(Modifier.width(8.dp))
-                        Text("Create Windows USB", fontWeight = FontWeight.Bold)
+                        Text(stringResource(R.string.windows_create_usb), fontWeight = FontWeight.Bold)
                     }
                 }
             }
@@ -85,7 +88,7 @@ fun WindowsFlashScreen(
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Icon(Icons.Filled.Computer, null, tint = CardWindowsAccent, modifier = Modifier.size(14.dp))
-                    Text("UEFI Boot Mode · FAT32 Partition", style = MaterialTheme.typography.labelSmall.copy(color = CardWindowsAccent))
+                    Text(stringResource(R.string.windows_uefi_fat32), style = MaterialTheme.typography.labelSmall.copy(color = CardWindowsAccent))
                 }
             }
 
@@ -117,8 +120,8 @@ fun WindowsFlashScreen(
                 Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                         Column {
-                            Text("Auto-split install.wim", style = MaterialTheme.typography.bodyMedium.copy(color = TextPrimary))
-                            Text("Required for files > 4 GB on FAT32 (uses wimlib-imagex)", style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary))
+                            Text(stringResource(R.string.windows_auto_split), style = MaterialTheme.typography.bodyMedium.copy(color = TextPrimary))
+                            Text(stringResource(R.string.windows_auto_split_desc), style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary))
                         }
                         Switch(
                             checked = wimSplitEnabled, onCheckedChange = { wimSplitEnabled = it },

@@ -12,7 +12,6 @@ class DaemonDroidApp : Application() {
             // Configure libsu: request root silently, set timeout
             Shell.setDefaultBuilder(
                 Shell.Builder.create()
-                    .setFlags(Shell.FLAG_REDIRECT_STDERR)
                     .setTimeout(30)
             )
         }

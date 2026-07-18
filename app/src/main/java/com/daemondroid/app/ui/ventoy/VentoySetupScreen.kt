@@ -1,5 +1,7 @@
 package com.daemondroid.app.ui.ventoy
 
+import com.daemondroid.app.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
@@ -20,6 +22,7 @@ import com.daemondroid.app.ui.components.FlashProgressState
 import com.daemondroid.app.ui.components.ProgressOverlay
 import com.daemondroid.app.ui.components.WarningDialog
 import com.daemondroid.app.ui.flash.StepCard
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import com.daemondroid.app.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -39,9 +42,9 @@ fun VentoySetupScreen(
         containerColor = DarkBackground,
         topBar = {
             TopAppBar(
-                title = { Text("Ventoy Maker", color = TextPrimary, fontWeight = FontWeight.SemiBold) },
+                title = { Text(stringResource(R.string.feature_ventoy), color = TextPrimary, fontWeight = FontWeight.SemiBold) },
                 navigationIcon = {
-                    IconButton(onClick = onBack) { Icon(Icons.Filled.ArrowBack, "Back", tint = TextSecondary) }
+                    IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = TextSecondary) }
                 },
                 actions = {
                     IconButton(onClick = onViewLog) { Icon(Icons.Filled.Terminal, "Log", tint = TextSecondary) }
@@ -64,7 +67,7 @@ fun VentoySetupScreen(
                     ) {
                         Icon(Icons.Filled.LayersClear, null, modifier = Modifier.size(18.dp))
                         Spacer(Modifier.width(8.dp))
-                        Text("Install Ventoy", style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Bold))
+                        Text(stringResource(R.string.ventoy_install), style = MaterialTheme.typography.labelLarge.copy(fontWeight = FontWeight.Bold))
                     }
                 }
             }
@@ -108,8 +111,8 @@ fun VentoySetupScreen(
             StepCard(3, "Options") {
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                     Column {
-                        Text("Secure Boot Support", style = MaterialTheme.typography.bodyMedium.copy(color = TextPrimary))
-                        Text("Includes MOK enrollment files", style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary))
+                        Text(stringResource(R.string.ventoy_secure_boot), style = MaterialTheme.typography.bodyMedium.copy(color = TextPrimary))
+                        Text(stringResource(R.string.ventoy_secure_boot_desc), style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary))
                     }
                     Switch(checked = secureBoot, onCheckedChange = { secureBoot = it },
                         colors = SwitchDefaults.colors(checkedTrackColor = DaemonPurple, checkedThumbColor = DaemonPurpleLight))
@@ -159,7 +162,7 @@ private fun ThemeQuickSelect(
         TextButton(onClick = onBrowseThemes, contentPadding = PaddingValues(0.dp)) {
             Icon(Icons.Filled.Palette, null, tint = CardVentoyAccent, modifier = Modifier.size(14.dp))
             Spacer(Modifier.width(4.dp))
-            Text("Browse & Preview Themes", color = CardVentoyAccent)
+            Text(stringResource(R.string.ventoy_browse_themes), color = CardVentoyAccent)
         }
     }
 }

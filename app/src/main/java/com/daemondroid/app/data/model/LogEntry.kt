@@ -2,6 +2,7 @@ package com.daemondroid.app.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import androidx.compose.runtime.Immutable
 import kotlinx.serialization.Serializable
 
 /**
@@ -9,6 +10,7 @@ import kotlinx.serialization.Serializable
  * Stored in Room database. Exported as JSON or plain text.
  */
 @Entity(tableName = "operation_logs")
+@Immutable
 @Serializable
 data class LogEntry(
     @PrimaryKey(autoGenerate = true)

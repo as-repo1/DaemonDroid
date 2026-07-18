@@ -25,4 +25,31 @@
     <string name="warn_internal_sd_title">Internal SD Card Selected</string>
     <string name="warn_wipe_title">Drive Will Be Wiped</string>
     <string name="warn_irreversible">This action cannot be undone.</string>
+
+    <!-- Dashboard -->
+    <string name="action_setup">Setup</string>
+    <string name="action_view_log">View Log</string>
+
+    <!-- Ventoy -->
+    <string name="ventoy_install">Install Ventoy</string>
+    <string name="ventoy_secure_boot">Secure Boot Support</string>
+    <string name="ventoy_secure_boot_desc">Includes MOK enrollment files</string>
+    <string name="ventoy_browse_themes">Browse &amp; Preview Themes</string>
+    <string name="ventoy_grub_themes">GRUB Themes</string>
+    <string name="ventoy_apply_theme">Apply %1$s Theme</string>
+    <string name="ventoy_no_theme">No Theme</string>
+    <string name="ventoy_no_theme_desc">Use Ventoy\'s default GRUB menu</string>
+
+    <!-- Windows -->
+    <string name="windows_create_usb">Create Windows USB</string>
+    <string name="windows_uefi_fat32">UEFI Boot Mode · FAT32 Partition</string>
+    <string name="windows_auto_split">Auto-split install.wim</string>
+    <string name="windows_auto_split_desc">Required for files > 4 GB on FAT32 (uses wimlib-imagex)</string>
+
+    <!-- Partition Manager -->
+    <string name="partition_wipe_all">Wipe All</string>
+
+    <!-- Log & Settings -->
+    <string name="title_operation_log">Operation Log</string>
+    <string name="title_settings">Settings</string>
 </resources>

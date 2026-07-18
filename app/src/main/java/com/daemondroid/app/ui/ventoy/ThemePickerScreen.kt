@@ -1,5 +1,7 @@
 package com.daemondroid.app.ui.ventoy
 
+import com.daemondroid.app.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -22,6 +24,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.daemondroid.app.data.model.VentoyTheme
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import com.daemondroid.app.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -33,9 +36,9 @@ fun ThemePickerScreen(onBack: () -> Unit) {
         containerColor = DarkBackground,
         topBar = {
             TopAppBar(
-                title = { Text("GRUB Themes", color = TextPrimary, fontWeight = FontWeight.SemiBold) },
+                title = { Text(stringResource(R.string.ventoy_grub_themes), color = TextPrimary, fontWeight = FontWeight.SemiBold) },
                 navigationIcon = {
-                    IconButton(onClick = onBack) { Icon(Icons.Filled.ArrowBack, "Back", tint = TextSecondary) }
+                    IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = TextSecondary) }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = DarkBackground),
             )
@@ -50,7 +53,7 @@ fun ThemePickerScreen(onBack: () -> Unit) {
                         onClick = onBack,
                         modifier = Modifier.weight(1f).height(52.dp),
                         shape = RoundedCornerShape(14.dp),
-                        border = ButtonDefaults.outlinedButtonBorder,
+                        border = ButtonDefaults.outlinedButtonBorder(enabled = true),
                     ) { Text("Cancel", color = TextSecondary) }
                     Button(
                         onClick = onBack,
@@ -60,7 +63,7 @@ fun ThemePickerScreen(onBack: () -> Unit) {
                     ) {
                         Icon(Icons.Filled.Check, null, modifier = Modifier.size(16.dp))
                         Spacer(Modifier.width(6.dp))
-                        Text("Apply ${selectedTheme.displayName} Theme", fontWeight = FontWeight.Bold)
+                        Text(stringResource(R.string.ventoy_apply_theme, selectedTheme.displayName), fontWeight = FontWeight.Bold)
                     }
                 }
             }
@@ -108,8 +111,8 @@ fun ThemePickerScreen(onBack: () -> Unit) {
                 ) {
                     Icon(Icons.Filled.HideImage, null, tint = TextTertiary, modifier = Modifier.size(24.dp))
                     Column(modifier = Modifier.weight(1f)) {
-                        Text("No Theme", style = MaterialTheme.typography.titleSmall.copy(color = TextPrimary))
-                        Text("Use Ventoy's default GRUB menu", style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary))
+                        Text(stringResource(R.string.ventoy_no_theme), style = MaterialTheme.typography.titleSmall.copy(color = TextPrimary))
+                        Text(stringResource(R.string.ventoy_no_theme_desc), style = MaterialTheme.typography.bodySmall.copy(color = TextSecondary))
                     }
                     if (selectedTheme == VentoyTheme.NONE) {
                         Icon(Icons.Filled.CheckCircle, null, tint = CardVentoyAccent)

@@ -71,6 +71,9 @@ flowchart LR
     Theme --> Done([Finished])
 ```
 
-## 4. Concurrency & Performance
+## 5. UI Architecture & Optimization
 
-All blocking shell commands, file I/O operations, and binary downloads are strictly confined to `Dispatchers.IO`. Real-time execution logs are emitted back to the UI via Kotlin Coroutines `Flow`, allowing the user to see a terminal-like output of the operations exactly as they happen.
+The Jetpack Compose UI follows strict performance guidelines:
+1. **Unidirectional Data Flow**: State is hoisted to Hilt-injected `ViewModels`.
+2. **Immutability guarantees**: Complex data classes (e.g., `BlockDeviceInfo`, `FlashJob`, `LogEntry`) are explicitly decorated with `@Immutable` annotations, ensuring the Compose compiler skips unnecessary recomposition phases when rendering lists of drives or streaming terminal logs.
+3. **Resource Abstraction**: Hardcoded text and constants are extracted into localized `strings.xml` resources, ensuring the UI remains adaptable.

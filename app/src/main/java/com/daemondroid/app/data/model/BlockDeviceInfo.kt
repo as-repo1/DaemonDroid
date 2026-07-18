@@ -1,10 +1,12 @@
 package com.daemondroid.app.data.model
 
+import androidx.compose.runtime.Immutable
 import kotlinx.serialization.Serializable
 
 /**
  * Represents a physical block device (USB drive, SD card, internal storage).
  */
+@Immutable
 @Serializable
 data class BlockDeviceInfo(
     val node: String,           // e.g. "/dev/block/sda" or "/dev/block/mmcblk1"
@@ -21,6 +23,7 @@ data class BlockDeviceInfo(
     val usbProductName: String? = null,
 )
 
+@Immutable
 @Serializable
 data class PartitionInfo(
     val number: Int,            // Partition number (1, 2, ...)

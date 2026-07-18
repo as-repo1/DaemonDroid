@@ -1,5 +1,7 @@
 package com.daemondroid.app.ui.flash
 
+import com.daemondroid.app.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -21,6 +23,7 @@ import com.daemondroid.app.ui.components.DriveSelector
 import com.daemondroid.app.ui.components.FlashProgressState
 import com.daemondroid.app.ui.components.ProgressOverlay
 import com.daemondroid.app.ui.components.WarningDialog
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import com.daemondroid.app.ui.theme.*
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -44,10 +47,10 @@ fun StandardFlashScreen(
         containerColor = DarkBackground,
         topBar = {
             TopAppBar(
-                title = { Text("Standard Flash", color = TextPrimary, fontWeight = FontWeight.SemiBold) },
+                title = { Text(stringResource(R.string.feature_standard_flash), color = TextPrimary, fontWeight = FontWeight.SemiBold) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.Filled.ArrowBack, "Back", tint = TextSecondary)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = TextSecondary)
                     }
                 },
                 actions = {

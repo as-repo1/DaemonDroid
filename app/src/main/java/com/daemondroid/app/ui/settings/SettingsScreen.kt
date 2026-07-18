@@ -1,5 +1,7 @@
 package com.daemondroid.app.ui.settings
 
+import com.daemondroid.app.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -14,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import com.daemondroid.app.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -27,9 +30,9 @@ fun SettingsScreen(onBack: () -> Unit) {
         containerColor = DarkBackground,
         topBar = {
             TopAppBar(
-                title = { Text("Settings", color = TextPrimary, fontWeight = FontWeight.SemiBold) },
+                title = { Text(stringResource(R.string.title_settings), color = TextPrimary, fontWeight = FontWeight.SemiBold) },
                 navigationIcon = {
-                    IconButton(onClick = onBack) { Icon(Icons.Filled.ArrowBack, "Back", tint = TextSecondary) }
+                    IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = TextSecondary) }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = DarkBackground),
             )

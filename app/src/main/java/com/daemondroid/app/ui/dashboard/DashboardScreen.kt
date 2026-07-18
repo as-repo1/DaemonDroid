@@ -1,5 +1,7 @@
 package com.daemondroid.app.ui.dashboard
 
+import com.daemondroid.app.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
@@ -145,14 +147,14 @@ private fun DashboardTopBar(
             IconButton(onClick = onLogClick) {
                 Icon(
                     Icons.Outlined.Terminal,
-                    contentDescription = "Operation Log",
+                    contentDescription = stringResource(R.string.title_operation_log),
                     tint = TextSecondary,
                 )
             }
             IconButton(onClick = onSettingsClick) {
                 Icon(
                     Icons.Outlined.Settings,
-                    contentDescription = "Settings",
+                    contentDescription = stringResource(R.string.title_settings),
                     tint = TextSecondary,
                 )
             }
@@ -224,7 +226,7 @@ private fun PrivilegeBanner(onConfigureClick: () -> Unit) {
                 )
             }
             TextButton(onClick = onConfigureClick) {
-                Text("Setup", color = DaemonPurpleLight, fontSize = 13.sp)
+                Text(stringResource(R.string.action_setup), color = DaemonPurpleLight, fontSize = 13.sp)
             }
         }
     }
@@ -239,7 +241,7 @@ private fun FeatureCardGrid(
 ) {
     val cards = listOf(
         FeatureCardData(
-            title = "Standard Flash",
+            title = stringResource(R.string.feature_standard_flash),
             subtitle = "Linux / Raspberry Pi",
             description = "Write raw disk images directly to USB or SD. Supports dd and FileChannel modes.",
             icon = Icons.Filled.Memory,
@@ -249,7 +251,7 @@ private fun FeatureCardGrid(
             badge = "FAST",
         ),
         FeatureCardData(
-            title = "Ventoy Maker",
+            title = stringResource(R.string.feature_ventoy),
             subtitle = "Multi-Boot USB",
             description = "Install Ventoy with custom GRUB themes. Drop ISOs onto the drive — no reflashing needed.",
             icon = Icons.Filled.LayersClear,
@@ -260,7 +262,7 @@ private fun FeatureCardGrid(
             requiresRoot = true,
         ),
         FeatureCardData(
-            title = "Windows Installer",
+            title = stringResource(R.string.feature_windows),
             subtitle = "ISO Extraction + WIM Split",
             description = "Extract Windows 11/10 ISOs to FAT32. Auto-splits large install.wim files via wimlib.",
             icon = Icons.Filled.Window,
@@ -269,7 +271,7 @@ private fun FeatureCardGrid(
             accentColor = CardWindowsAccent,
         ),
         FeatureCardData(
-            title = "Partition Manager",
+            title = stringResource(R.string.feature_partition),
             subtitle = "FAT32 · exFAT · ext4",
             description = "View, wipe, and create partitions using parted. Full GPT and MBR support.",
             icon = Icons.Filled.Storage,
@@ -446,7 +448,7 @@ private fun RecentActivitySection(onViewAll: () -> Unit) {
                 style = MaterialTheme.typography.titleSmall.copy(color = TextPrimary),
             )
             TextButton(onClick = onViewAll) {
-                Text("View Log", color = DaemonPurpleLight, fontSize = 13.sp)
+                Text(stringResource(R.string.action_view_log), color = DaemonPurpleLight, fontSize = 13.sp)
             }
         }
 

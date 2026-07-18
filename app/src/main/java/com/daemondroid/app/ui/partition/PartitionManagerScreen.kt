@@ -1,5 +1,7 @@
 package com.daemondroid.app.ui.partition
 
+import com.daemondroid.app.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -21,6 +23,7 @@ import androidx.compose.ui.unit.sp
 import com.daemondroid.app.data.model.PartitionInfo
 import com.daemondroid.app.ui.components.DriveSelector
 import com.daemondroid.app.ui.components.WarningDialog
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import com.daemondroid.app.ui.theme.*
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -42,9 +45,9 @@ fun PartitionManagerScreen(
         containerColor = DarkBackground,
         topBar = {
             TopAppBar(
-                title = { Text("Partition Manager", color = TextPrimary, fontWeight = FontWeight.SemiBold) },
+                title = { Text(stringResource(R.string.feature_partition), color = TextPrimary, fontWeight = FontWeight.SemiBold) },
                 navigationIcon = {
-                    IconButton(onClick = onBack) { Icon(Icons.Filled.ArrowBack, "Back", tint = TextSecondary) }
+                    IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = TextSecondary) }
                 },
                 actions = {
                     IconButton(onClick = onViewLog) { Icon(Icons.Filled.Terminal, "Log", tint = TextSecondary) }
@@ -85,7 +88,7 @@ fun PartitionManagerScreen(
                 ) {
                     Icon(Icons.Filled.DeleteForever, null, modifier = Modifier.size(16.dp))
                     Spacer(Modifier.width(6.dp))
-                    Text("Wipe All")
+                    Text(stringResource(R.string.partition_wipe_all))
                 }
                 Button(
                     onClick = { showCreateDialog = true },

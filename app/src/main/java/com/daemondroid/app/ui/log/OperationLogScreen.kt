@@ -1,5 +1,7 @@
 package com.daemondroid.app.ui.log
 
+import com.daemondroid.app.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
@@ -23,6 +25,7 @@ import com.daemondroid.app.data.model.OperationPhase
 import com.daemondroid.app.data.model.OperationResult
 import com.daemondroid.app.ui.theme.*
 import java.text.SimpleDateFormat
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import java.util.*
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -44,9 +47,9 @@ fun OperationLogScreen(onBack: () -> Unit) {
         containerColor = DarkBackground,
         topBar = {
             TopAppBar(
-                title = { Text("Operation Log", color = TextPrimary, fontWeight = FontWeight.SemiBold) },
+                title = { Text(stringResource(R.string.title_operation_log), color = TextPrimary, fontWeight = FontWeight.SemiBold) },
                 navigationIcon = {
-                    IconButton(onClick = onBack) { Icon(Icons.Filled.ArrowBack, "Back", tint = TextSecondary) }
+                    IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = TextSecondary) }
                 },
                 actions = {
                     IconButton(onClick = { /* export */ }) {
