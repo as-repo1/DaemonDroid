@@ -18,7 +18,7 @@ DaemonDroid is a powerful, modern, open-source Android application that turns yo
 
 | Dashboard | Privilege Wizard | Operation Log (Terminal) |
 | :---: | :---: | :---: |
-| <img src="docs/assets/screenshot_dashboard.png" width="250" /> | <img src="docs/assets/screenshot_wizard.png" width="250" /> | <img src="docs/assets/screenshot_terminal.png" width="250" /> |
+| <img src="docs/assets/screenshot_dashboard.jpg" width="250" /> | <img src="docs/assets/screenshot_wizard.jpg" width="250" /> | <img src="docs/assets/screenshot_terminal.jpg" width="250" /> |
 
 ---
 
