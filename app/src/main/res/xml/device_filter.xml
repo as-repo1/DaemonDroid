@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- USB device filter: match all USB mass storage devices -->
+<resources>
+    <!-- USB Mass Storage class -->
+    <usb-device class="8" subclass="6" protocol="80" />
+    <!-- Allow all (broad match for OTG drives) -->
+    <usb-device />
+</resources>

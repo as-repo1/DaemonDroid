@@ -1,0 +1,15 @@
+<resources>
+    <!-- Base theme — DaemonDroid uses Compose for all UI, this is just for the system/splash -->
+    <style name="Theme.DaemonDroid" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowBackground">@color/daemon_background</item>
+    </style>
+
+    <!-- Splash screen theme -->
+    <style name="Theme.DaemonDroid.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/daemon_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.DaemonDroid</item>
+    </style>
+</resources>

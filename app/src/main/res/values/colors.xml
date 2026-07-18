@@ -1,0 +1,5 @@
+<resources>
+    <color name="daemon_background">#0A0A0F</color>
+    <color name="daemon_purple">#7C3AED</color>
+    <color name="daemon_cyan">#00D4FF</color>
+</resources>
